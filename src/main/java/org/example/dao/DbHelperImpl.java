@@ -1,10 +1,14 @@
 package org.example.dao;
 
+import org.springframework.stereotype.Component;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
+@Component
 public class DbHelperImpl implements DbHelper {
 
     String url = "jdbc:postgresql://localhost:5432/tinder_db";

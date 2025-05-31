@@ -6,14 +6,19 @@ import org.example.models.Account;
 import org.example.models.dto.AuthRequest;
 import org.example.services.AccountService;
 import org.example.services.AuthService;
+import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+@Service
 public class AuthServiceImpl implements AuthService {
 
-    private AccountService accountService=new AccountServiceImpl();
+    public AuthServiceImpl(AccountService accountService) {
+        this.accountService = accountService;
+    }
+
+    private final AccountService accountService;
 
     @Override
     public String login(AuthRequest request) {

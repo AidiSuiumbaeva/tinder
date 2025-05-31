@@ -5,14 +5,19 @@ import org.example.dao.DbHelperImpl;
 import org.example.models.Account;
 import org.example.services.AccountService;
 import org.postgresql.util.PSQLException;
+import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+@Service
 public class AccountServiceImpl implements AccountService {
 
-    private DbHelper dbHelper=new DbHelperImpl();
+    private final DbHelper dbHelper;
+
+    public AccountServiceImpl(DbHelper dbHelper) {
+        this.dbHelper = dbHelper;
+    }
 
 
     @Override
@@ -63,5 +68,8 @@ public class AccountServiceImpl implements AccountService {
             throw  new RuntimeException("Произошла ошибка при получении аккаунта");
         }
         return null;
+    }
+
+    public void setDbHelper(String dbHelper) {
     }
 }

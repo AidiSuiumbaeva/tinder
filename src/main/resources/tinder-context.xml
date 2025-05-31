@@ -5,14 +5,15 @@
          http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <
 
 
-    <bean id="test" class=""/>
+    <bean id="dbHelperImpl" class="org.example.dao.DbHelperImpl"/>
+    <bean id="dbHelperImpl" class="org.example.dao.DbHelperImpl"/>
 
     <!-- Bean UserService с зависимостью через сеттер -->
-    <bean id="test2" class="org.example.services.impl.AccountServiceImpl">
-        <property name="testRep" ref="test"/>
+    <bean id="accountService" class="org.example.services.impl.AccountServiceImpl">
     </bean>
+
+
 
 </beans>
