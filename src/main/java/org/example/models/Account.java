@@ -1,11 +1,12 @@
 package org.example.models;
 
 import org.example.models.enums.AccountStatus;
+import org.springframework.beans.factory.FactoryBean;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
 
-public class Account {
+public class Account  {
     private Long id;
     private String login;
     private String password;

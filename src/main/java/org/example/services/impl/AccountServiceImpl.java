@@ -4,12 +4,15 @@ import org.example.dao.DbHelper;
 import org.example.dao.DbHelperImpl;
 import org.example.models.Account;
 import org.example.services.AccountService;
+import org.example.services.UserService;
 import org.postgresql.util.PSQLException;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 @Service
 public class AccountServiceImpl implements AccountService {
 
@@ -18,6 +21,8 @@ public class AccountServiceImpl implements AccountService {
     public AccountServiceImpl(DbHelper dbHelper) {
         this.dbHelper = dbHelper;
     }
+
+
 
 
     @Override

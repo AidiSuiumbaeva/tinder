@@ -2,6 +2,7 @@ package org.example.controllers;
 
 import org.example.models.dto.UserCreateRequest;
 import org.example.services.UserService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
+
 
 
     public UserController(UserService userService) {
